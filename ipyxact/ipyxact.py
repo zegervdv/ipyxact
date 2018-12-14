@@ -103,7 +103,7 @@ class IpxactItem(object):
 
         S = '{%s}' % self.nsmap[self.nsversion][1]
         if not (root.tag == S+self._tag):
-            raise Exception
+            raise RuntimeError('Unknown NS version')
 
         self.parse_tree(root, self.nsmap[self.nsversion])
 
